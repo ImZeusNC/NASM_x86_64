@@ -1,6 +1,6 @@
 section .data                ;seccion para inicializar las variables.
 	msg db "Hola Mundo",10   ;se inicia la variable msg con un Hola Mundo y un espacio en codigo ASCII.
-
+							 ;
 section .text                ;seccion para el codigo.
 	global _start            ;se hace global el inicio del programa.
 	_start:                  ;se inicia el programa.
