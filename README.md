@@ -1,2 +1,3 @@
 # NASM_x86_64
-My personal x86_64 repository for tracking my progress.
+Mi repositorio personal de proyectos hechos con lenguaje ensamblador x86_64.
+Busco documentar mis progresos a la vez de crear una ayuda a quienes busquen iniciarse en este lenguaje.
