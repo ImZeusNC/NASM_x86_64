@@ -1,0 +1,17 @@
+El lenguaje ensamblador x86_64 de la sintaxis de NASM esta formada por tres segmentos:
+
+.data : Seccion dedicada a la inicializacion de variables.
+.bss  : Seccion dedicada a la asignacion de variables no iniciadas.
+.text : Seccion dedicada a contener el codigo del programa.
+
+* Definicion: Para definir una seccion podemos utilizar 'section' o 'segment' indistingidamente.
+* La seccion '.bss' no es necesaria si las variables son inicializadas en '.data'.
+* La seccion '.text' es indispensable en cada codigo de ensamblador para indicar el inicio del programa.
+
+Ejemplo:
+
+section .data
+
+section .bss
+
+section .text
