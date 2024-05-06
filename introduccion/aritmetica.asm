@@ -11,10 +11,10 @@ _start:
     mov cl, 7    ;cl = 7
     mov dl, 3    ;dl = 3
     sub cl, dl   ;cl = cl - dl
-    ;multiplicacion aritmetica
+    ;multiplicacion aritmetica (excepcion)
     mov cl, 7    ; cl = 7
     mov dl, 2    ; dl = 2
-    imul cl      ; cl = cl * dl
+    imul cl      ; cx = cl * dl, al multiplicarse el resultado quedara en un registro de mas bits
     ;division aritmetica
     mov al, 15   ; al = 15
     mov bl, 3    ; bl = 3
