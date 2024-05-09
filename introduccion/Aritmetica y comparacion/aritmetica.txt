@@ -15,6 +15,7 @@
                  -  DEC   -  *           -  fuente            -  ( fuente = fuente - 1            )
                  -  ADC   -  *           -  fuente, destino   -  ( fuente = fuente + destino + CF )   *CF significa [Carry flag]
                  -  SBB   -  *           -  fuente, destino   -  ( fuente = fuente - destino - CF )
+                 -  CMP   -  *           -  fuente, destino   -  ( hace una resta sin guardar     )
 
        ---------------------------------------  [    SINTAXIS    ]   ----------------------------------------
 
