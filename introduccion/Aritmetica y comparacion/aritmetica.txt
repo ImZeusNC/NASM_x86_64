@@ -1,0 +1,50 @@
+        ----Operaciones aritmeticas en lenguaje ensamblador x86_64 usando la sintaxis de NASM en Linux----
+
+       $====================================================================================================$
+       |                                        LISTA DE OPERACIONES                                        |
+       $====================================================================================================$
+
+                 [ NOMBRE ]  [ CON SIGNO ]  [    OPERANDOS    ]  [          DESCRIPCION           ]   
+        
+                 -  ADD   -  *           -  fuente, destino   -  ( fuente = fuente + destino      )
+                 -  SUB   -  *           -  fuente, destino   -  ( fuente = fuente - destino      )
+                 -  MUL   -  IMUL        -  destino           -  ( fuente = fuente * destino      )
+                 -  DIV   -  IDIV        -  destino           -  ( fuente = fuente / destino      )
+                 -  NEG   -  *           -  fuente            -  ( fuente = -fuente               )
+                 -  INC   -  *           -  fuente            -  ( fuente = fuente + 1            )
+                 -  DEC   -  *           -  fuente            -  ( fuente = fuente - 1            )
+                 -  ADC   -  *           -  fuente, destino   -  ( fuente = fuente + destino + CF )   *CF significa [Carry flag]
+                 -  SBB   -  *           -  fuente, destino   -  ( fuente = fuente - destino - CF )
+
+       ---------------------------------------  [    SINTAXIS    ]   ----------------------------------------
+
+                                        Operacion registro, valor/registro
+
+       ---------------------------------------  [     EJEMPLO     ]  ----------------------------------------        
+
+       section .data
+            dos: db 2
+            tres: db 3
+            cuatro: db 4
+
+        section .text
+            global _start
+
+        _start:
+            ; suma aritmetica
+            mov rbx, dos
+            add rbx, tres
+            call _imprimirResultado
+
+            ; finalizar programa
+            mov rax, 60
+            xor rdi, rdi
+            syscall
+
+        _imprimirResultado:
+            mov rax, 1
+            mov rdi, 1
+            mov rsi, rbx
+            mov rdx, 2 
+            syscall
+            ret
