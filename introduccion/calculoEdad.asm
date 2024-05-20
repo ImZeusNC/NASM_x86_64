@@ -8,11 +8,11 @@ section .text
 
 _start:
     ; Leer el número de la consola
-    mov eax, 3 ; sys_read
-    mov ebx, 0 ; stdin
-    mov ecx, buffer ; Dirección del buffer
-    mov edx, 5 ; Tamaño del buffer
-    int 0x80
+    mov rax, 0 ; sys_read
+    mov rdi, 0 ; stdin
+    mov rsi, buffer ; Dirección del buffer
+    mov rdx, 5 ; Tamaño del buffer
+    syscall
 
     ; Convertir el texto a número
     mov ecx, buffer
@@ -25,7 +25,7 @@ convert_loop:
     imul eax, edi ; Multiplicar el número acumulado por la base
     add eax, edx ; Sumar el nuevo dígito
     inc ecx ; Avanzar al siguiente carácter
-    cmp byte [ecx], 0 ; Comprobar si hemos llegado al final del texto
+    cmp byte [ecx], 0x0A ; Comprobar si hemos llegado al final del texto
     jne convert_loop
 
     mov [num], eax ; Guardar el número
@@ -53,14 +53,14 @@ convert_back_loop:
     jne convert_back_loop
 
     ; Imprimir el resultado
-    inc ecx ; Mover ecx al primer dígito
-    mov eax, 4 ; sys_write
-    mov ebx, 1 ; stdout
-    mov edx, result + 4 ; Apuntar al final del buffer de resultado
-    sub edx, ecx ; Calcular la longitud del número
-    int 0x80
+    mov rax, 1 ; sys_write
+    mov rdi, 1 ; stdout
+    lea rsi, [ecx+1] ; Apuntar al primer dígito
+    mov rdx, result + 4 ; Apuntar al final del buffer de resultado
+    sub rdx, rsi ; Calcular la longitud del número
+    syscall
 
     ; Salir del programa
-    mov eax, 1 ; sys_exit
-    xor ebx, ebx ; Código de salida 0
-    int 0x80
+    mov rax, 60 ; sys_exit
+    xor rdi, rdi ; Código de salida 0
+    syscall
