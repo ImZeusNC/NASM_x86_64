@@ -1,7 +1,5 @@
-section .data
-    num resd 1 ; Aquí se almacenará el número ingresado
-
 section .bss
+    num resd 1 ; Aquí se almacenará el número ingresado
     buffer resb 5 ; Buffer para almacenar el número como texto
     result resb 5 ; Buffer para almacenar el resultado como texto
 
