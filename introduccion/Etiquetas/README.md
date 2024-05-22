@@ -3,9 +3,9 @@
 Las etiquetas son nombres que guardan una dirección en el codigo que es donde se declaran, podemos acceder a estas mediante saltos que alteran el flujo de ejecución.
 
 ### Dentro de este archivo encontraremos:
--Declaración de una etiqueta.
--Salto condicional e incondicional a una etiqueta.
--Pdf imprimible con el contenido tratado.
+- Declaración de una etiqueta.
+- Salto condicional e incondicional a una etiqueta.
+- Pdf imprimible con el contenido tratado.
 
 ## Declaracion de Etiquetas
 ```
