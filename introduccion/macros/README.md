@@ -10,7 +10,8 @@ ahorran bastante tiempo al momento de programar al reutlizar código ya escrito.
 
 ## Declarar una Macro:
 
-``` %macro (nombre) (cantidad de argumentos)
+``` 
+    %macro (nombre) (cantidad de argumentos)
         (contenido de la macro)
     %endmacro
 ```
