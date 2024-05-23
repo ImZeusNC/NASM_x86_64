@@ -1,12 +1,12 @@
-# TIPOS DE INSTRUCCIONES EN EL LENGUAJE ENSAMBLADOR X86_64 EN LA SINTAXIS DE NASM
+# TIPOS DE INSTRUCCIONES
 
 ## Instrucciones de transferencia de datos:
-
-`mov destino, fuente`: instruccion generica para mover un dato desde un origen a un destino.
-`push fuente`: instruccion que mueve el operando de la instruccion a la cima de la pila.
-`pop destino`: mueve el dato que se encuentra en la cima de la pila al operando destino.
-`xchg destino, fuente`: intercambia contenidos de los operandos.
-
+```
+    mov destino, fuente: instruccion generica para mover un dato desde un origen a un destino.
+    push fuente: instruccion que mueve el operando de la instruccion a la cima de la pila.
+    pop destino: mueve el dato que se encuentra en la cima de la pila al operando destino.
+    xchg destino, fuente: intercambia contenidos de los operandos.
+```
 ## Instrucciones aritmeticas y de comparacion:
 
 `add destino, fuente`: suma aritmetica de los dos operandos.
@@ -82,5 +82,6 @@
 `int servicio`: llamada al sistema operativo.
 
 ## Instrucciones de entrada/salida
+
 `in destino, fuente`: lectura del puerto E/S especificado en el operando fuente y se guarda en el operando destino.
 `out destino, fuente`: escritura de valor especificado por operando fuente en el puerto de E/S especificado en el operando destino.
